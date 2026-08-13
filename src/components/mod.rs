@@ -18,4 +18,4 @@ mod projects;
 pub use projects::ProjectsSection;
 
 mod contacts;
-pub use contacts::ContactsSection;
+pub use contacts::ContactsSection;pub mod card;

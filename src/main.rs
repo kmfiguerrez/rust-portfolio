@@ -5,8 +5,6 @@ use dioxus::prelude::*;
 
 use components::{AboutMeSection, Navbar, HomeSection, ContactsSection, ProjectsSection};
 
-use crate::components::{};
-
 /// Define a components module that contains all shared components for our app.
 mod components;
 
@@ -14,8 +12,8 @@ mod components;
 // The macro returns an `Asset` type that will display as the path to the asset in the browser or a local path in desktop bundles.
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 // The asset macro also minifies some assets like CSS and JS to make bundled smaller
-const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
+const DX_THEME: Asset = asset!("/assets/dx-components-theme.css");
 
 fn main() {
     // The `launch` function is the main entry point for a dioxus app. It takes a component and renders it with the platform feature
@@ -46,6 +44,7 @@ fn App() -> Element {
             rel: "stylesheet",
             href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         }
+        document::Link { rel: "stylesheet", href: DX_THEME }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
 
         Navbar {}

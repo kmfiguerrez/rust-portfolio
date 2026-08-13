@@ -1,12 +1,15 @@
 use dioxus::prelude::*;
 
-use super::skills::Skills;
+use super::{wiwo::Wiwo, certifications::Certifications, badges::Bagdes, skills::Skills};
 
 #[component]
 pub fn AboutMeSection() -> Element {
     rsx! {
-        section { id: "about-me", class: "h-screen border container-x",
-            h3 { class: "text-center", "About Me" }
+        section { id: "about-me", class: "min-h-fit border container-x",
+            h3 { class: "text-center text-5xl font-bold mb-16", "ABOUT ME" }
+            Wiwo { class: "mb-16" }
+            Certifications { class: "mb-16" }
+            Bagdes { class: "mb-16" }
             Skills {}
         }
     }
