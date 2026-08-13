@@ -104,12 +104,14 @@ pub fn CardFooter(
     #[props(extends=GlobalAttributes)] attributes: Vec<Attribute>,
     children: Element,
 ) -> Element {
+    // Let's make card content accept a class input without deleting the base style dx_card_footer.
+    let base = attributes!(div {
+        class: Styles::dx_card_footer,
+        "data-slot": "card-footer",
+    });
+    let merged = merge_attributes(vec![base, attributes]);
+        
     rsx! {
-        div {
-            class: Styles::dx_card_footer,
-            "data-slot": "card-footer",
-            ..attributes,
-            {children}
-        }
+        div { ..merged,{children} }
     }
 }

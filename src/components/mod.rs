@@ -19,3 +19,5 @@ pub use projects::ProjectsSection;
 
 mod contacts;
 pub use contacts::ContactsSection;pub mod card;
+pub mod separator;
+pub mod button;

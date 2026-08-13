@@ -6,7 +6,7 @@ pub fn Languages(#[props(default)] class: String) -> Element {
         div { class: "{class}",
             h5 { class: "mb-4", "Languages" }
 
-            div { class: "grid grid-cols-2 pl-4 gap-y-7 lg:grid-cols-3 lg:w-1/2 ",
+            div { class: "grid grid-cols-2 pl-4 gap-y-7 lg:grid-cols-3 lg:w-1/2",
                 // HTML
                 div { class: "flex items-center gap-x-2",
                     img {
