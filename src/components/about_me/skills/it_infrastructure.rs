@@ -32,7 +32,7 @@ pub fn ItInfrastructure(#[props(default)] class: String) -> Element {
                         alt: "docker logo",
                         class: "h-7 w-7",
                     }
-                    span { "WLans" }
+                    span { "WLANs" }
                 }
                 // Windows
                 div { class: "flex items-center gap-x-2",
