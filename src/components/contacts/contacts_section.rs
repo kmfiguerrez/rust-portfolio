@@ -16,7 +16,7 @@ pub fn ContactsSection() -> Element {
                         img {
                             class: "h-75 mx-auto sm:w-95",
                             src: asset!("/assets/static/socials.svg"),
-                            alt: "burger menu logo",
+                            alt: "socials logo",
                             loading: "lazy",
                         }
                     }

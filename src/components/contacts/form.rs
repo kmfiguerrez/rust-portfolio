@@ -1,4 +1,4 @@
-use dioxus::prelude::*;
+use dioxus::{logger::tracing, prelude::*};
 
 use crate::components::{input::Input, label::Label, textarea::{Textarea, TextareaVariant}, button::Button};
 
@@ -9,6 +9,7 @@ pub fn MessageForm() -> Element {
         // prevent_default stops the browser from navigating the page on submit
         // Also from realoading the page.
         e.prevent_default();
+        tracing::info!("{:?}", e.values());
     };
 
     rsx! {
@@ -38,11 +39,11 @@ pub fn MessageForm() -> Element {
                 Label { class: "mb-1 text-base!", html_for: "message", "Message" }
                 Textarea {
                     id: "message",
+                    name: "message",
                     variant: TextareaVariant::default(),
                     required: true,
                     rows: "5",
                     placeholder: "Enter your message",
-                                // class: "bg-[#29292c]!",
                 }
             }
             Button { r#type: "submit", class: "max-sm:w-full max-sm:mb-8", "Send Message" }
