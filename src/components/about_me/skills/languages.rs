@@ -65,3 +65,19 @@ pub fn Languages(#[props(default)] class: String) -> Element {
         }
     }
 }
+
+
+
+// #[component]
+// pub fn Icon(filename: String) -> Element {
+//     rsx! {
+//         div { class: "flex items-center gap-x-2",
+//             img {
+//                 src: asset!("/assets/static/{filename}.svg"),
+//                 alt: "{filename} logo",
+//                 class: "h-8 w-8",
+//             }
+//             span { "HTML" }
+//         }
+//     }
+// }

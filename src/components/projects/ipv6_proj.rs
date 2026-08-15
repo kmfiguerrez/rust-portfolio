@@ -7,7 +7,7 @@ use crate::components::{separator::Separator};
 #[component]
 pub fn IPv6Project() -> Element {
     rsx! {
-        Card { class: "w-xs border-zinc-500! rounded-xl! bg-white!",
+        Card { class: "max-md:mx-auto w-xs border-zinc-500! rounded-xl! bg-white!",
             CardContent {
                 div {
                     img {

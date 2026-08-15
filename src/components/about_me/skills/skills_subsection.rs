@@ -14,7 +14,7 @@ pub fn Skills() -> Element {
             //     }
             //     h4 { class: "text-blue-600 text-2xl font-semibold", "SKILLS" }
             // }
-            h4 { class: "text-blue-600 text-2xl  mb-8", "SKILLS" }
+            h4 { class: "text-blue-600 mb-8 text-lg md:text-2xl", "SKILLS" }
 
             Languages { class: "mb-10" }
             FrameworksTools { class: "mb-10" }
