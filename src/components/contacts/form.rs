@@ -1,15 +1,25 @@
 use dioxus::{logger::tracing, prelude::*};
 
-use crate::components::{input::Input, label::Label, textarea::{Textarea, TextareaVariant}, button::Button};
+use crate::components::{
+    input::Input,
+    label::Label,
+    textarea::{Textarea, TextareaVariant}, button::Button,
+    alert_dialog::{AlertDialog, AlertDialogTitle, AlertDialogDescription, AlertDialogActions, AlertDialogAction, AlertDialogCancel}
+};
 
 #[component]
 pub fn MessageForm() -> Element {
+    // For Alert Dialog
+    let mut open = use_signal(|| false);
+
 
     let handle_submit = move |e: Event<FormData>| {
         // prevent_default stops the browser from navigating the page on submit
         // Also from realoading the page.
         e.prevent_default();
         tracing::info!("{:?}", e.values());
+        open.set(true);
+
     };
 
     rsx! {
@@ -47,6 +57,17 @@ pub fn MessageForm() -> Element {
                 }
             }
             Button { r#type: "submit", class: "max-sm:w-full max-sm:mb-8", "Send Message" }
+            AlertDialog { open: open(), on_open_change: move |v| open.set(v),
+                AlertDialogTitle { "Subscription Ended" }
+                AlertDialogDescription {
+                    "This form doesn't work anymore cause my subscription ended lol!
+                    You can contact me thru my social medias instead."
+                }
+                AlertDialogActions {
+                    AlertDialogCancel { "Cool!" }
+                    AlertDialogAction { "Broke ass nigga!" }
+                }
+            }
         }
     }
 }
