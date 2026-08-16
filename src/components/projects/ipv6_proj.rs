@@ -1,7 +1,13 @@
 use dioxus::prelude::*;
 
-use crate::components::card::{Card, CardContent, CardFooter};
-use crate::components::{separator::Separator};
+use crate::components::{
+    card::{Card, CardContent, CardFooter},
+    separator::Separator
+};
+use super::{
+    proj_dialog::ProjectDialog,
+    ipv6_dialog_content::IPv6DialogContent
+};
 
 
 #[component]
@@ -25,13 +31,10 @@ pub fn IPv6Project() -> Element {
             }
             CardFooter { class: "justify-between",
                 p { class: "text-blue-500 font-semibold", "Frontend App" }
-
-                button {
-                    img {
-                        src: asset!("/assets/static/plus-circle-icon.svg"),
-                        alt: "plus icon",
-                        class: "h-8 w-8",
-                    }
+                ProjectDialog {
+                    title: "IPV6 SUBNETTING",
+                    demo_link: "https://ipv6subnetting.netlify.app",
+                    IPv6DialogContent {}
                 }
             }
         }

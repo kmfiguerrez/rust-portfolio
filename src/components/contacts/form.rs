@@ -64,7 +64,7 @@ pub fn MessageForm() -> Element {
                     You can contact me thru my social medias instead."
                 }
                 AlertDialogActions {
-                    AlertDialogCancel { "Cool!" }
+                    AlertDialogCancel { "I'll donate!" }
                     AlertDialogAction { "Broke ass nigga!" }
                 }
             }

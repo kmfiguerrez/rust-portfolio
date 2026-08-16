@@ -25,3 +25,4 @@ pub mod input;
 pub mod label;
 pub mod textarea;
 pub mod alert_dialog;
+pub mod dialog;

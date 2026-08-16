@@ -1,8 +1,11 @@
 use dioxus::prelude::*;
 
-use crate::components::card::{Card, CardContent, CardFooter};
-use crate::components::{separator::Separator};
+use crate::components::{
+    card::{Card, CardContent, CardFooter},
+    separator::Separator
+};
 
+use super::{proj_dialog::ProjectDialog, ipv4_dialog_content::IPv4DialogContent};
 
 #[component]
 pub fn IPv4Project() -> Element {
@@ -25,13 +28,10 @@ pub fn IPv4Project() -> Element {
             }
             CardFooter { class: "justify-between",
                 p { class: "text-blue-500 font-semibold", "Frontend App" }
-
-                button {
-                    img {
-                        src: asset!("/assets/static/plus-circle-icon.svg"),
-                        alt: "plus icon",
-                        class: "h-8 w-8",
-                    }
+                ProjectDialog {
+                    title: "IPV4 SUBNETTING",
+                    demo_link: "https://ipv4subnetting.netlify.app",
+                    IPv4DialogContent {}
                 }
             }
         }
