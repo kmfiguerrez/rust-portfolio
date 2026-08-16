@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use super::{form::MessageForm, linkedin_logo::LinkedinLogo, github_logo::GithubLogo, discord_logo::DiscordLogo};
+use super::{form::MessageForm, linkedin_logo::LinkedinLogo, github_logo::GithubLogo, discord_logo::DiscordLogo, socials_adialog::SocialsAlertDialog};
 
 #[component]
 pub fn ContactsSection() -> Element {
@@ -10,6 +10,7 @@ pub fn ContactsSection() -> Element {
             class: "max-md:min-h-fit md:h-screen border container-x",
             h3 { class: "text-center font-bold mb-16 text-3xl md:text-5xl", "CONTACTS" }
             div { class: "grid gap-y-10 md:grid-cols-2",
+                // Socials section
                 div {
                     h4 { class: "text-lg text-blue-500 mb-8 md:text-2xl", "SOCIALS" }
                     div {
@@ -20,25 +21,25 @@ pub fn ContactsSection() -> Element {
                             loading: "lazy",
                         }
                     }
-                    div { class: "flex justify-center gap-x-27",
-                        a {
-                            href: "https://www.linkedin.com/in/kmfiguerrez",
-                            target: "_blank",
+                    div { class: "flex justify-between sm:justify-center sm:gap-x-27",
+                        SocialsAlertDialog {
+                            social_site: "Linkedin",
+                            link: "https://www.linkedin.com/in/kmfiguerrez",
                             LinkedinLogo {}
-                            {}
                         }
-                        a {
-                            href: "https://github.com/kmfiguerrez",
-                            target: "_blank",
+                        SocialsAlertDialog {
+                            social_site: "Github",
+                            link: "https://github.com/kmfiguerrez",
                             GithubLogo {}
-                            {}
                         }
-                        a { href: "",
+                        SocialsAlertDialog {
+                            social_site: "Discord",
+                            link: "https://discord.com/channels/@me",
                             DiscordLogo {}
-                            {}
                         }
                     }
                 }
+                // Message section
                 div {
                     h4 { class: "text-lg text-blue-500 mb-8 md:text-2xl", "SEND ME A MESSAGE" }
                     MessageForm {}

@@ -6,7 +6,7 @@ pub fn LinkedinLogo() -> Element {
         svg {
             class: "h-15 w-15 hover:fill-blue-500",
             fill: "white",
-            view_box: "0 2 24 24",
+            view_box: "0 0 24 24",
             xmlns: "http://www.w3.org/2000/svg",
             g { id: "SVGRepo_bgCarrier", stroke_width: "0" }
             g {

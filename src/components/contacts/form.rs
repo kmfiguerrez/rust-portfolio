@@ -58,7 +58,7 @@ pub fn MessageForm() -> Element {
             }
             Button {
                 r#type: "submit",
-                class: "max-sm:w-full max-sm:mb-8 cursor-pointer!",
+                class: "max-md:w-full max-md:mb-8 cursor-pointer!",
                 "Send Message"
             }
             AlertDialog { open: open(), on_open_change: move |v| open.set(v),

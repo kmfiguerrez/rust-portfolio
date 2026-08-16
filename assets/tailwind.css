@@ -630,6 +630,11 @@
       margin-inline: auto;
     }
   }
+  .max-md\:mb-8 {
+    @media (width < 48rem) {
+      margin-bottom: calc(var(--spacing) * 8);
+    }
+  }
   .max-md\:mb-32 {
     @media (width < 48rem) {
       margin-bottom: calc(var(--spacing) * 32);
@@ -638,6 +643,11 @@
   .max-md\:min-h-fit {
     @media (width < 48rem) {
       min-height: fit-content;
+    }
+  }
+  .max-md\:w-full {
+    @media (width < 48rem) {
+      width: 100%;
     }
   }
   .max-sm\:mx-auto {
@@ -668,6 +678,16 @@
   .sm\:w-95 {
     @media (width >= 40rem) {
       width: calc(var(--spacing) * 95);
+    }
+  }
+  .sm\:justify-center {
+    @media (width >= 40rem) {
+      justify-content: center;
+    }
+  }
+  .sm\:gap-x-27 {
+    @media (width >= 40rem) {
+      column-gap: calc(var(--spacing) * 27);
     }
   }
   .sm\:py-4 {

@@ -4,4 +4,5 @@ pub use contacts_section::ContactsSection;
 mod linkedin_logo;
 mod github_logo;
 mod discord_logo;
+mod socials_adialog;
 mod form;

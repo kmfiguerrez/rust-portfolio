@@ -12,7 +12,8 @@ struct Styles;
 #[component]
 pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Element {
     let mut dialog_open = use_signal(|| false);
-    let mut alert_dialog_open = use_signal(|| false);
+    let mut code_open = use_signal(|| false);
+    let mut demo_open = use_signal(|| false);
 
     rsx! {
         button { onclick: move |_| dialog_open.set(true),
@@ -49,18 +50,18 @@ pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Ele
                         class: "h-5 w-5",
                     }
                     button {
-                        onclick: move |_| alert_dialog_open.set(true),
-                        class: "hover:font-semibold",
+                        onclick: move |_| code_open.set(true),
+                        class: "hover:font-semibold cursor-pointer",
                         "Code"
                     }
                     AlertDialog {
-                        open: alert_dialog_open(),
-                        on_open_change: move |v| alert_dialog_open.set(v),
-                        AlertDialogTitle { "Want the code?" }
-                        AlertDialogDescription { "Contact me thru my social medias." }
+                        open: code_open(),
+                        on_open_change: move |v| code_open.set(v),
+                        AlertDialogTitle { "View the code?" }
+                        AlertDialogDescription { "Contact me thru my social media." }
                         AlertDialogActions {
-                            AlertDialogAction { "Nah!" }
-                            AlertDialogCancel { "Sure!" }
+                            AlertDialogCancel { "Nah!" }
+                            AlertDialogAction { "Sure!" }
                         }
                     }
                 }
@@ -71,11 +72,22 @@ pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Ele
                         alt: "demo icon",
                         class: "h-5 w-5",
                     }
-                    a {
-                        href: "{demo_link}",
-                        target: "_blank",
-                        class: "hover:font-semibold",
+                    button {
+                        onclick: move |_| demo_open.set(true),
+                        class: "hover:font-semibold cursor-pointer",
                         "Demo"
+                    }
+                    AlertDialog {
+                        open: demo_open(),
+                        on_open_change: move |v| demo_open.set(v),
+                        AlertDialogTitle { "View the app?" }
+                        AlertDialogDescription { "This link will take you to the app's website." }
+                        AlertDialogActions {
+                            AlertDialogCancel { "Stay!" }
+                            AlertDialogAction {
+                                a { href: "{demo_link}", target: "_blank", "Let's go!" }
+                            }
+                        }
                     }
                 }
             }
