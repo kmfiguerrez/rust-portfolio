@@ -19,7 +19,7 @@ pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Ele
             img {
                 src: asset!("/assets/static/plus-circle-icon.svg"),
                 alt: "plus icon",
-                class: "h-8 w-8 animate-pulse",
+                class: "h-8 w-8 cursor-pointer animate-pulse",
             }
         }
         Dialog {

@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use super::form::MessageForm;
+use super::{form::MessageForm, linkedin_logo::LinkedinLogo, github_logo::GithubLogo, discord_logo::DiscordLogo};
 
 #[component]
 pub fn ContactsSection() -> Element {
@@ -20,7 +20,23 @@ pub fn ContactsSection() -> Element {
                             loading: "lazy",
                         }
                     }
-                    div {
+                    div { class: "flex justify-center gap-x-27",
+                        a {
+                            href: "https://www.linkedin.com/in/kmfiguerrez",
+                            target: "_blank",
+                            LinkedinLogo {}
+                            {}
+                        }
+                        a {
+                            href: "https://github.com/kmfiguerrez",
+                            target: "_blank",
+                            GithubLogo {}
+                            {}
+                        }
+                        a { href: "",
+                            DiscordLogo {}
+                            {}
+                        }
                     }
                 }
                 div {

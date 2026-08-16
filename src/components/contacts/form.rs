@@ -56,7 +56,11 @@ pub fn MessageForm() -> Element {
                     placeholder: "Enter your message",
                 }
             }
-            Button { r#type: "submit", class: "max-sm:w-full max-sm:mb-8", "Send Message" }
+            Button {
+                r#type: "submit",
+                class: "max-sm:w-full max-sm:mb-8 cursor-pointer!",
+                "Send Message"
+            }
             AlertDialog { open: open(), on_open_change: move |v| open.set(v),
                 AlertDialogTitle { "Subscription Ended" }
                 AlertDialogDescription {
@@ -64,7 +68,13 @@ pub fn MessageForm() -> Element {
                     You can contact me thru my social medias instead."
                 }
                 AlertDialogActions {
-                    AlertDialogCancel { "I'll donate!" }
+                    AlertDialogCancel {
+                        a {
+                            href: "https://www.paypal.com/paypalme/kmfiguerrez",
+                            target: "_blank",
+                            "I'll donate!"
+                        }
+                    }
                     AlertDialogAction { "Broke ass nigga!" }
                 }
             }

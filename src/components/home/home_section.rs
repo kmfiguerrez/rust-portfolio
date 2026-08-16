@@ -12,7 +12,7 @@ pub fn HomeSection() -> Element {
             // }
             div { class: "mb-3",
                 button { class: "border rounded-md py-2 px-4 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white hover:border-zinc-900",
-                    "Hi, I'm"
+                    a { href: "#about-me", "Hi, I'm" }
                 }
             }
             p { class: " text-3xl  font-bold mb-4 sm:text-4xl lg:text-7xl", "KARL MICHAEL FIGUERREZ" }
