@@ -10,7 +10,10 @@ pub fn SocialsAlertDialog(social_site: String, link: String, children: Element) 
 
     rsx! {
         button { onclick: move |_| open.set(true), class: "cursor-pointer", {children} }
-        AlertDialog { open: open(), on_open_change: move |v| open.set(v),
+        AlertDialog {
+            class: "bg-zinc-800!",
+            open: open(),
+            on_open_change: move |v| open.set(v),
             AlertDialogTitle { "Visit {social_site}?" }
             AlertDialogDescription { "This link will take you to {social_site} website." }
             AlertDialogActions {

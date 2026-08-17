@@ -41,7 +41,7 @@ pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Ele
             {children}
             // Dialog footer
             Separator { horizontal: true, decorative: true }
-            div { class: "flex justify-center gap-x-7",
+            div { class: "flex justify-center gap-x-8",
                 // Code link.
                 div { class: "flex items-center gap-x-2",
                     img {
@@ -55,6 +55,7 @@ pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Ele
                         "Code"
                     }
                     AlertDialog {
+                        class: "bg-zinc-800!",
                         open: code_open(),
                         on_open_change: move |v| code_open.set(v),
                         AlertDialogTitle { "View the code?" }
@@ -78,6 +79,7 @@ pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Ele
                         "Demo"
                     }
                     AlertDialog {
+                        class: "bg-zinc-800!",
                         open: demo_open(),
                         on_open_change: move |v| demo_open.set(v),
                         AlertDialogTitle { "View the app?" }

@@ -3,12 +3,18 @@ use dioxus_primitives::alert_dialog::{
     self, AlertDialogActionProps, AlertDialogActionsProps, AlertDialogCancelProps,
     AlertDialogDescriptionProps, AlertDialogRootProps, AlertDialogTitleProps,
 };
+use dioxus_primitives::{dioxus_attributes::attributes, merge_attributes};
 
 #[css_module("/src/components/alert_dialog/style.css")]
 struct Styles;
 
 #[component]
 pub fn AlertDialog(props: AlertDialogRootProps) -> Element {
+    let base = attributes!(div {
+        class: Styles::dx_alert_dialog,
+    });
+    let merged = merge_attributes(vec![base, props.attributes]);
+
     rsx! {
         alert_dialog::AlertDialogRoot {
             class: Styles::dx_alert_dialog_backdrop,
@@ -16,9 +22,11 @@ pub fn AlertDialog(props: AlertDialogRootProps) -> Element {
             default_open: props.default_open,
             open: props.open,
             on_open_change: props.on_open_change,
-            attributes: props.attributes,
+            // attributes: props.attributes,
             alert_dialog::AlertDialogContent {
-                class: Styles::dx_alert_dialog.to_string(),
+                // class: Styles::dx_alert_dialog.to_string(),
+                class: None,
+                attributes: merged,
                 {props.children}
             }
         }
@@ -50,7 +58,11 @@ pub fn AlertDialogDescription(props: AlertDialogDescriptionProps) -> Element {
 #[component]
 pub fn AlertDialogActions(props: AlertDialogActionsProps) -> Element {
     rsx! {
-        alert_dialog::AlertDialogActions { class: Styles::dx_alert_dialog_actions, attributes: props.attributes, {props.children} }
+        alert_dialog::AlertDialogActions {
+            class: Styles::dx_alert_dialog_actions,
+            attributes: props.attributes,
+            {props.children}
+        }
     }
 }
 

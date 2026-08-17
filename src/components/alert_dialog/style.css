@@ -131,3 +131,8 @@
 .dx-alert-dialog-action:focus-visible {
   box-shadow: 0 0 0 2px var(--focused-border-color);
 }
+
+html:has(.dx-alert-dialog-backdrop[data-state="open"]) {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}

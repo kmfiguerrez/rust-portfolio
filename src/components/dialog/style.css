@@ -100,3 +100,8 @@
 .dx-dialog-close:hover {
   color: var(--secondary-color-1);
 }
+
+html:has(.dx-dialog-backdrop[data-state="open"]) {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}

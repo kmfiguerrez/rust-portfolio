@@ -17,8 +17,8 @@ pub fn HomeSection() -> Element {
             }
             p { class: " text-3xl  font-bold mb-4 sm:text-4xl lg:text-7xl", "KARL MICHAEL FIGUERREZ" }
             p { class: "sm:text-lg md:text-xl lg:text-3xl",
-                "Network"
-                span { class: "text-blue-500", " Enginner" }
+                "System"
+                span { class: "text-blue-500", " Administrator" }
                 " & "
                 span { class: "text-amber-500", "Rust" }
                 " Developer"
