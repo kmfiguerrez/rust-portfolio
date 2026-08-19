@@ -5,4 +5,7 @@ mod ipv6_proj;
 mod ipv6_dialog_content;
 mod ipv4_proj;
 mod ipv4_dialog_content;
+mod rp_proj;
+mod rp_dialog_content;
+
 mod proj_dialog;

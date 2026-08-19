@@ -87,7 +87,11 @@ pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Ele
                         AlertDialogActions {
                             AlertDialogCancel { "Stay!" }
                             AlertDialogAction {
-                                a { href: "{demo_link}", target: "_blank", "Let's go!" }
+                                a {
+                                    href: "{demo_link}",
+                                    target: if title.trim().to_lowercase() != "rust portfolio" { "_blank" } else { "_self" },
+                                    "Let's go!"
+                                }
                             }
                         }
                     }

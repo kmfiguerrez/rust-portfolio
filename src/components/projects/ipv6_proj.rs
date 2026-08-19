@@ -11,9 +11,9 @@ use super::{
 
 
 #[component]
-pub fn IPv6Project() -> Element {
+pub fn IPv6Project(#[props(default)] class: String) -> Element {
     rsx! {
-        Card { class: "max-md:mx-auto w-xs border-zinc-500! rounded-xl! bg-white!",
+        Card { class: "max-md:mx-auto w-xs border-zinc-500! rounded-xl! bg-white! {class}",
             CardContent {
                 div {
                     img {

@@ -8,9 +8,9 @@ use crate::components::{
 use super::{proj_dialog::ProjectDialog, ipv4_dialog_content::IPv4DialogContent};
 
 #[component]
-pub fn IPv4Project() -> Element {
+pub fn IPv4Project(#[props(default)] class: String) -> Element {
     rsx! {
-        Card { class: "max-md:mx-auto w-xs border-zinc-500! rounded-xl! bg-white!",
+        Card { class: "max-md:mx-auto w-xs border-zinc-500! rounded-xl! bg-white! {class}",
             CardContent {
                 div {
                     img {

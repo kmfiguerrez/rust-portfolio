@@ -15,7 +15,13 @@ pub fn SocialsAlertDialog(social_site: String, link: String, children: Element) 
             open: open(),
             on_open_change: move |v| open.set(v),
             AlertDialogTitle { "Visit {social_site}?" }
-            AlertDialogDescription { "This link will take you to {social_site} website." }
+            AlertDialogDescription {
+                if social_site.trim().to_lowercase() != "discord" {
+                    "This link will take you to {social_site} website."
+                } else {
+                    "My Discord username is kmf3139."
+                }
+            }
             AlertDialogActions {
                 AlertDialogCancel { "Stay!" }
                 AlertDialogAction {
