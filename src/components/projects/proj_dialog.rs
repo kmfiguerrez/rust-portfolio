@@ -51,7 +51,7 @@ pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Ele
                     }
                     button {
                         onclick: move |_| code_open.set(true),
-                        class: "hover:font-semibold cursor-pointer",
+                        class: "font-semibold opacity-70 hover:opacity-100 cursor-pointer",
                         "Code"
                     }
                     AlertDialog {
@@ -75,7 +75,7 @@ pub fn ProjectDialog(title: String, demo_link: String, children: Element) -> Ele
                     }
                     button {
                         onclick: move |_| demo_open.set(true),
-                        class: "hover:font-semibold cursor-pointer",
+                        class: "font-semibold opacity-70 hover:opacity-100 cursor-pointer",
                         "Demo"
                     }
                     AlertDialog {

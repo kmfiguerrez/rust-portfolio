@@ -5,10 +5,9 @@ use super::{form::MessageForm, linkedin_logo::LinkedinLogo, github_logo::GithubL
 #[component]
 pub fn ContactsSection() -> Element {
     rsx! {
-        section {
-            id: "contacts",
-            class: "max-md:min-h-fit md:h-screen border container-x",
+        section { id: "contacts", class: "max-md:min-h-fit md:h-screen container-x",
             h3 { class: "text-center font-bold mb-16 text-3xl md:text-5xl", "CONTACTS" }
+
             div { class: "grid gap-y-10 md:grid-cols-2",
                 // Socials section
                 div {
@@ -43,6 +42,14 @@ pub fn ContactsSection() -> Element {
                 div {
                     h4 { class: "text-lg text-blue-500 mb-8 md:text-2xl", "SEND ME A MESSAGE" }
                     MessageForm {}
+                }
+            }
+            a { href: "#home", class: "block w-fit mx-auto sm:hidden",
+                img {
+                    class: "h-10 w-10 animate-bounce",
+                    src: asset!("/assets/static/up-arrow-white.svg"),
+                    alt: "white up arrow icon",
+                    loading: "lazy",
                 }
             }
         }
