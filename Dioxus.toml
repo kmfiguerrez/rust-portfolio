@@ -4,6 +4,8 @@
 
 # HTML title tag content
 title = "Karl Michael Figuerrez"
+base_path = "kmfiguerrez.github.io
+"
 
 # include `assets` in web platform
 [web.resource]
