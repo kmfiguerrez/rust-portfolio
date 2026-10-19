@@ -34,18 +34,12 @@ fn App() -> Element {
         document::Link { rel: "icon", href: FAVICON }
         // document::Link { rel: "stylesheet", href: MAIN_CSS }
         // Typhography
-        document::Link { rel: "stylesheet", href: "https://fonts.googleapis.com" }
-        document::Link {
-            rel: "stylesheet",
-            href: "https://fonts.gstatic.com",
-            crossorigin: "anonymous",
-        }
         document::Link {
             rel: "stylesheet",
             href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         }
-        document::Link { rel: "stylesheet", href: DX_THEME }
-        document::Link { rel: "stylesheet", href: TAILWIND_CSS }
+        document::Stylesheet { href: DX_THEME }
+        document::Stylesheet { href: TAILWIND_CSS }
 
         Navbar {}
         // main {}
